@@ -2,12 +2,101 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+  background: #050505;
+}
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  overflow-x: hidden;
   background: radial-gradient(circle at top, #3f2604 0, #130f0b 35%, #050505 100%);
   color: #f8e7b0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-button, input, textarea { font: inherit; }
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 8rem;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+button,
+textarea {
+  overflow-wrap: anywhere;
+}
+
+main {
+  max-width: 460px !important;
+  min-height: 100dvh !important;
+  overflow-x: hidden !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  padding-top: max(1rem, env(safe-area-inset-top)) !important;
+  padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+}
+
+header h1 {
+  font-size: clamp(1.75rem, 9vw, 2.7rem) !important;
+}
+
+main section > div.grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 0.75rem !important;
+}
+
+main section > div.grid > button {
+  min-height: 218px;
+}
+
+main section > div.grid > button > div:first-child {
+  height: 4rem !important;
+}
+
+@media (min-width: 380px) {
+  main {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  main section > div.grid {
+    gap: 1rem !important;
+  }
+
+  main section > div.grid > button > div:first-child {
+    height: 5rem !important;
+  }
+}
