@@ -1,0 +1,164 @@
+MBTI-codex-package/01 首页：与神对话/01-entry-bg.png (1).png
+MBTI-codex-package/01 首页：与神对话/01-entry-bg.png (2).png
+MBTI-codex-package/01 首页：与神对话/01-entry-bg.png (3).png
+MBTI-codex-package/01 首页：与神对话/01-entry-bg.png (4).png
+MBTI-codex-package/01 首页：与神对话/01-entry-bg.png (5).png
+MBTI-codex-package/01 首页：与神对话/01-entry-bg.png (6).png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ENFJ.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ENFP.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ENTJ.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ENTP.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ESFJ.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ESFP.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ESTJ.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ESTP.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-INFP.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-INTJ.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-INTP.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ISFJ.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ISFP.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ISTJ.png
+MBTI-codex-package/01 首页：与神对话/01-home-deity-ISTP.png
+MBTI-codex-package/01 首页：与神对话/01-home-opening-motion.mp4
+MBTI-codex-package/01 首页：与神对话/01-home-oracle-paper-bg.png
+MBTI-codex-package/01 首页：与神对话/01-home-reference.png
+MBTI-codex-package/01 首页：与神对话/01-home-start-button.png
+MBTI-codex-package/01 首页：与神对话/01-home-title-1.png
+MBTI-codex-package/01 首页：与神对话/01-home-title-2.png
+MBTI-codex-package/02 i神e神 入口页/02-entry-bg (1).png
+MBTI-codex-package/02 i神e神 入口页/02-entry-bg (2).png
+MBTI-codex-package/02 i神e神 入口页/02-entry-bg (3).png
+MBTI-codex-package/02 i神e神 入口页/02-entry-bg (4).png
+MBTI-codex-package/02 i神e神 入口页/02-entry-bg (5).png
+MBTI-codex-package/02 i神e神 入口页/02-entry-bg (6).png
+MBTI-codex-package/02 i神e神 入口页/02-entry-bg (7).png
+MBTI-codex-package/02 i神e神 入口页/02-entry-e-booklet.png
+MBTI-codex-package/02 i神e神 入口页/02-entry-i-booklet.png
+MBTI-codex-package/02 i神e神 入口页/02-entry-reference.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-back-octagon.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-INFJ.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-INFP.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-INTJ.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-INTP.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-ISFJ.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-ISFP.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-ISTJ.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-ISTP.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-oracle-paper-bg.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-select-reference.png
+MBTI-codex-package/03 i神 MBTI 选择页/03-i-mbti-select-title.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-back-octagon.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-ENFJ.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-ENFP.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-ENTJ.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-ENTP.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-ESFJ.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-ESFP.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-ESTJ.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-ESTP.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-oracle-paper-bg.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-select-reference.png
+MBTI-codex-package/04 e神 MBTI 选择页/04-e-mbti-select-title.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-back-octagon.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-choose-deity-button.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-card-ENFJ.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-card-ENTJ.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-card-ENTP.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-card-ESFJ.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-card-INFJ.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-card-INFP.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-card-INTJ.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-card-INTP.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-deity-detail-reference.png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-entry-bg (1).png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-entry-bg (2).png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-entry-bg (3).png
+MBTI-codex-package/05 神明详情确认页：叠卡吊牌/05-oracle-paper-bg.png
+MBTI-codex-package/06 提问页/06-oracle-paper-bg.png
+MBTI-codex-package/06 提问页/06-question-confirm-button.png
+MBTI-codex-package/06 提问页/06-question-empty-reference.png
+MBTI-codex-package/06 提问页/06-question-filled-reference.png
+MBTI-codex-package/06 提问页/06-question-input-frame.png
+MBTI-codex-package/06 提问页/06-question-stage-frame-ENFJ.png
+MBTI-codex-package/06 提问页/06-question-stage-frame-ENTJ.png
+MBTI-codex-package/06 提问页/06-question-stage-frame-ENTP.png
+MBTI-codex-package/06 提问页/06-question-stage-frame-ESFJ.png
+MBTI-codex-package/06 提问页/06-question-stage-frame-INFJ.png
+MBTI-codex-package/06 提问页/06-question-stage-frame-INFP.png
+MBTI-codex-package/06 提问页/06-question-stage-frame-INTJ.png
+MBTI-codex-package/06 提问页/06-question-stage-frame-INTP.png
+MBTI-codex-package/07 签文指示页/07-back-octagon.png
+MBTI-codex-package/07 签文指示页/07-oracle-approve-button.png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-bg.png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENFJ (1).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENFJ (2).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENFJ (3).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENTJ (1).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENTJ (2).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENTJ (3).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENTP (1).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENTP (2).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ENTP (3).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ESFJ (1).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ESFJ (2).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-ESFJ (3).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INFJ (1).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INFJ (2).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INFJ (3).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INFP (1).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INFP (2).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INFP (3).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INTJ (1).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INTJ (2).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INTJ (3).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INTP (1).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INTP (2).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-INTP (3).png
+MBTI-codex-package/07 签文指示页/07-oracle-paper-reference.png
+MBTI-codex-package/07 签文指示页/07-oracle-verify-button.png
+MBTI-codex-package/08 茭杯动画页：虔诚中/08-cup-glow.png
+MBTI-codex-package/08 茭杯动画页：虔诚中/08-cup-left.png
+MBTI-codex-package/08 茭杯动画页：虔诚中/08-cup-loading-reference.png
+MBTI-codex-package/08 茭杯动画页：虔诚中/08-cup-loading-title.png
+MBTI-codex-package/08 茭杯动画页：虔诚中/08-cup-right.png
+MBTI-codex-package/08 茭杯动画页：虔诚中/08-cup-toss-motion.mp4
+MBTI-codex-package/09 茭杯结果页/09-back-octagon.png
+MBTI-codex-package/09 茭杯结果页/09-cup-result-smile-reference.png
+MBTI-codex-package/09 茭杯结果页/09-cup-result-smile.png
+MBTI-codex-package/09 茭杯结果页/09-cup-result-yang-reference.png
+MBTI-codex-package/09 茭杯结果页/09-cup-result-yang.png
+MBTI-codex-package/09 茭杯结果页/09-cup-result-yin-reference.png
+MBTI-codex-package/09 茭杯结果页/09-cup-result-yin.png
+MBTI-codex-package/09 茭杯结果页/09-oracle-paper-bg.png
+MBTI-codex-package/09 茭杯结果页/09-result-again-button.png
+MBTI-codex-package/09 茭杯结果页/09-result-approve-button.png
+MBTI-codex-package/10 最终保存卡页面/10-back-octagon.png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENFJ (1).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENFJ (2).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENFJ (3).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENTJ (1).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENTJ (2).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENTJ (3).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENTP (1).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENTP (2).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ENTP (3).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ESFJ (1).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ESFJ (2).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-ESFJ (3).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INFJ (1).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INFJ (2).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INFJ (3).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INFP (1).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INFP (2).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INFP (3).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INTJ (1).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INTJ (2).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INTJ (3).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INTP (1).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INTP (2).png
+MBTI-codex-package/10 最终保存卡页面/10-deity-INTP (3).png
+MBTI-codex-package/10 最终保存卡页面/10-oracle-paper-bg.png
+MBTI-codex-package/10 最终保存卡页面/10-save-card-drop-motion.mp4
+MBTI-codex-package/10 最终保存卡页面/10-save-card-reference.png
+MBTI-codex-package/10 最终保存卡页面/10-save-hold-tip.png
+MBTI-codex-package/MBTI-codex-package-Document Description.txt

@@ -1,0 +1,17 @@
+﻿mbti,group,home_deity_assets,mbti_select_card_assets,deity_detail_card_assets,question_stage_frame_assets,oracle_paper_presets,save_card_presets,complete_downstream_assets
+INTJ,i,1,1,1,1,3,3,yes
+INTP,i,1,1,1,1,3,3,yes
+INFJ,i,0,1,1,1,3,3,yes
+INFP,i,1,1,1,1,3,3,yes
+ISTJ,i,1,1,0,0,0,0,no
+ISFJ,i,1,1,0,0,0,0,no
+ISTP,i,1,1,0,0,0,0,no
+ISFP,i,1,1,0,0,0,0,no
+ENTJ,e,1,1,1,1,3,3,yes
+ENTP,e,1,1,1,1,3,3,yes
+ENFJ,e,1,1,1,1,3,3,yes
+ENFP,e,1,1,0,0,0,0,no
+ESTJ,e,1,1,0,0,0,0,no
+ESFJ,e,1,1,1,1,3,3,yes
+ESTP,e,1,1,0,0,0,0,no
+ESFP,e,1,1,0,0,0,0,no
