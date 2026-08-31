@@ -1,0 +1,81 @@
+01 首页：与神对话
+01-home-reference.png：首页完整页面参考图
+01-home-oracle-paper-bg.png：首页空白底图
+01-home-title-1.png：首页主标题文字
+01-home-title-2.png：首页底部文字
+01-home-start-button.png：首页开始按钮
+01-home-deity-INTJ.png ... home-deity-ESFP.png：首页神仙形象独立素材，共15个
+01-entry-bg.png (1)-(6)：首页装饰元素
+01-home-opening-motion.mp4：首页动效参考
+
+02 i神e神 入口页
+02-entry-reference.png：i神e神 入口页完整页面参考图
+02-entry-i-booklet.png：i神e神 入口页的i神册子
+02-entry-e-booklet.png：i神e神 入口页的e神册子
+02-entry-bg.png (1)-(7)：i神e神 入口页的装饰元素
+
+03 i神 MBTI 选择页
+03-i-mbti-select-reference.png：i神 MBTI 选择页完整参考图
+03-i-mbti-oracle-paper-bg.png：i神 MBTI 选择页空白底图
+03-i-mbti-select-title.png：i神 MBTI 选择页说明文字
+03-i-mbti-INFJ.png、03-i-mbti-INFP ...：i神 MBTI 选择页i神组 MBTI 独立牌子，共8个
+03-i-mbti-back-octagon.png：i神 MBTI 选择页右上角八边形返回按钮
+
+04 e神 MBTI 选择页
+04-e-mbti-select-reference.png：e神 MBTI 选择页完整参考图
+04-e-mbti-oracle-paper-bg.png：e神 MBTI 选择页空白底图
+04-e-mbti-select-title.png：e神 MBTI 选择页说明文字
+04-e-mbti-INFJ.png、04-e-mbti-INFP ...：e神 MBTI 选择页i神组 MBTI 独立牌子，共8个
+04-e-mbti-back-octagon.png：e神 MBTI 选择页右上角八边形返回按钮
+
+05 神明详情确认页：叠卡吊牌
+05-deity-detail-reference.png05 神明详情确认页完整参考图
+05-oracle-paper-bg.png：神明详情确认页空白底图
+05-deity-card-ENFJ、05-deity-card-ENTJ ...：神明详情确认页神明主吊牌，暂时共8张
+05-choose-deity-button.png：神明详情确认页选择祂按钮
+05-back-octagon.png：神明详情确认页右上角八边形返回按钮
+05-entry-bg.png (1)-(3)：神明详情确认页装饰元素
+
+06 提问页
+06-question-empty-reference：提问页空状态参考图
+06-question-filled-reference.png：提问页已输入状态参考图
+06-oracle-paper-bg.png：提问页空白底图
+06-question-stage-frame-ENFJ.png、06-question-stage-frame-ENTJ.png：提问页的不同MBTI神明对应的神龛，暂时共8个
+06-question-input-frame.png：提问页输入框底图
+06-question-confirm-button.png：提问页确认按钮
+
+07 签文指示页
+07-oracle-paper-reference.png：签文指示页完整参考图
+07-oracle-paper-bg.png：签文指示页空白底图
+07-oracle-approve-button.png：签文指示页认可按钮
+07-oracle-verify-button.png：签文指示页我要验牌按钮
+07-back-octagon.png：签文指示页右上角八边形返回按钮
+07-oracle-paper-ENTJ (1)-(3).png、07-oracle-paper-ENTP (1)-(3).png ...：签文指示页不同MBTI对应的黄色签文纸，每个MBTI各预设三种指示，目前共8个MBTI
+（备注：黄色签文纸已预设了不同MBTI的指示，目前已有的MBTI均为3种预设指示，本次制作的版本直接使用目前已有的预设指示，如果选择对应的MBTI神明，则可在已预设的三种里随机三选一，本指示页不再由代码竖排渲染）
+
+08 茭杯动画页：虔诚中
+08-cup-loading-reference.png：茭杯动画页完整参考图
+08-cup-left.png、08-cup-right：茭杯动画页茭杯左右两片
+08-cup-glow.png：茭杯动画页光晕背景图
+08-cup-loading-title.png：茭杯动画页虔诚中文字
+08-cup-toss-motion.mp4：茭杯动画页茭杯动效参考
+
+09 茭杯结果页
+09-cup-result-yang-referenc.png：茭杯结果页阳杯参考图
+09-cup-result-yin-reference.png：茭杯结果页阴杯参考图
+09-cup-result-smile-reference.png：茭杯结果页笑杯参考图
+09-oracle-paper-bg.png：茭杯结果页空白底图
+09-back-octagon.png：茭杯结果页右上角八边形返回按钮
+09-cup-result-yang.png：茭杯结果页阳杯结果图形
+09-cup-result-yin.png：茭杯结果页阴杯结果图形
+09-cup-result-smile.png：茭杯结果页笑杯结果图形
+09-result-approve-button.png：茭杯结果页认可按钮
+09-result-again-button.png：茭杯结果页再来一次按钮
+
+10 最终保存卡页面
+10-save-card-reference.png：最终保存卡页面完整参考图
+10-oracle-paper-bg.png：最终保存卡页面空白底图
+10-back-octagon.png：最终保存卡页面右上角八边形返回按钮
+10-save-hold-tip.png：最终保存卡页面长按保存提示文字
+10-deity-ENFJ (1)-(3)、10-deity-ENTJ (1)-(3) ...：最终保存卡页面的每种最终保存卡，暂时已有8个MBTI神明，其中每个MBTI有三种预设，本页的最终结果对应07 签文指示页中抽取到的黄色签文纸，07-oracle-paper-ENTJ (1)对应10-deity-ENFJ (1)、07-oracle-paper-ENFJ (2)对应10-deity-ENFJ (2)、07-oracle-paper-ENTJ (1)对应10-deity-ENTJ (1) ... 最终保存卡不由代码竖排渲染
+10-save-card-drop-motion.mp4：最终保存卡页面保存页落下动效参考
