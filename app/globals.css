@@ -1,113 +1,2483 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  color-scheme: dark;
+@font-face {
+  font-family: "Xinyi Jixiang Song";
+  src:
+    url("/fonts/fontquan-xinyi-jixiangsong.ttf")
+    format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html {
+html,
+body {
   min-height: 100%;
-  overflow-x: hidden;
-  background: #050505;
+  margin: 0;
+  background: #d9c7a4;
 }
 
 body {
-  min-height: 100vh;
   min-height: 100dvh;
-  margin: 0;
-  overflow-x: hidden;
-  background: radial-gradient(circle at top, #3f2604 0, #130f0b 35%, #050505 100%);
-  color: #f8e7b0;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+  color: #352719;
+  font-family: Arial, "Microsoft YaHei", sans-serif;
 }
 
 button,
-input,
 textarea {
   font: inherit;
 }
 
 button {
-  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
 
-textarea {
-  resize: vertical;
-  min-height: 8rem;
+button:active {
+  transform: scale(0.97);
 }
 
-img,
-svg,
-video,
-canvas {
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(0.65);
+  opacity: 0.5;
+}
+
+img {
+  display: block;
   max-width: 100%;
 }
 
-p,
-h1,
-h2,
-h3,
-button,
-textarea {
-  overflow-wrap: anywhere;
+.app-shell {
+  position: relative;
+  width: min(100vw, 430px);
+  height: 100dvh;
+  min-height: 600px;
+  max-height: 932px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #f5ead4;
+  box-shadow: 0 0 35px #4d3b2860;
 }
 
-main {
-  max-width: 460px !important;
-  min-height: 100dvh !important;
-  overflow-x: hidden !important;
-  padding-left: 12px !important;
-  padding-right: 12px !important;
-  padding-top: max(1rem, env(safe-area-inset-top)) !important;
-  padding-bottom: max(1rem, env(safe-area-inset-bottom)) !important;
+.page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f5ead4;
+  background-position: center top;
+  background-size: 100% 100%;
 }
 
-@keyframes card-reveal {
+.asset-button img {
+  width: 100%;
+  height: auto;
+}
+
+.back-button {
+  position: absolute;
+  z-index: 20;
+  top: 5.8%;
+  right: 7.2%;
+  width: 15.2%;
+}
+
+.text-back {
+  position: absolute;
+  z-index: 20;
+  top: 22px;
+  left: 20px;
+  min-height: 40px;
+  padding: 6px 16px;
+  border: 1px solid #68472f;
+  border-radius: 22px;
+  background: #f8edcfdd;
+  color: #53331e;
+}
+
+.top-left {
+  top: max(18px, env(safe-area-inset-top));
+}
+
+/* 首页 */
+
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-deities img {
+  position: absolute;
+  height: auto;
+  max-width: none;
+  opacity: 0;
+  animation-timing-function:
+    cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-fill-mode: forwards;
+}
+
+.home-title {
+  position: absolute;
+  z-index: 5;
+  top: 28.338%;
+  left: 31.807%;
+  width: 39.927%;
+  opacity: 0;
+  animation:
+    home-title-reveal
+    680ms
+    ease-out
+    forwards;
+}
+
+.home-fish img {
+  position: absolute;
+  height: auto;
+  max-width: none;
+  opacity: 0;
+  animation:
+    home-control-reveal
+    480ms
+    ease-out
+    forwards;
+}
+
+.home-subtitle {
+  position: absolute;
+  z-index: 6;
+  top: 90.817%;
+  left: 25.031%;
+  width: 45.36%;
+  opacity: 0;
+  animation:
+    home-control-reveal
+    480ms
+    ease-out
+    forwards;
+}
+
+.home-start {
+  position: absolute;
+  z-index: 7;
+  top: 81.606%;
+  left: 34.432%;
+  width: 30.342%;
+  opacity: 0;
+  animation:
+    home-control-reveal
+    480ms
+    ease-out
+    forwards;
+}
+
+.home-start:active {
+  transform: scale(0.97);
+}
+
+.home-start:disabled {
+  filter: none;
+  opacity: 0;
+}
+
+.home-page-exiting {
+  z-index: 1;
+  animation:
+    home-page-fade
+    2600ms
+    ease-in-out
+    forwards;
+}
+
+@keyframes home-deity-reveal-left {
+  from {
+    opacity: 0;
+    scale: 0.78;
+    translate: -20px 8px;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  70% {
+    opacity: 1;
+    scale: 1.04;
+    translate: 2px 0;
+    filter:
+      drop-shadow(
+        0 0 9px
+        rgba(255, 255, 170, 0.95)
+      )
+      drop-shadow(
+        0 0 22px
+        rgba(70, 225, 255, 0.85)
+      );
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+@keyframes home-deity-reveal-right {
+  from {
+    opacity: 0;
+    scale: 0.78;
+    translate: 20px 8px;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  70% {
+    opacity: 1;
+    scale: 1.04;
+    translate: -2px 0;
+    filter:
+      drop-shadow(
+        0 0 9px
+        rgba(255, 255, 170, 0.95)
+      )
+      drop-shadow(
+        0 0 22px
+        rgba(70, 225, 255, 0.85)
+      );
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+@keyframes home-deity-reveal-top {
+  from {
+    opacity: 0;
+    scale: 0.78;
+    translate: 0 -18px;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  70% {
+    opacity: 1;
+    scale: 1.04;
+    translate: 0 2px;
+    filter:
+      drop-shadow(
+        0 0 9px
+        rgba(255, 255, 170, 0.95)
+      )
+      drop-shadow(
+        0 0 22px
+        rgba(70, 225, 255, 0.85)
+      );
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+@keyframes home-deity-reveal-bottom {
+  from {
+    opacity: 0;
+    scale: 0.78;
+    translate: 0 18px;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  70% {
+    opacity: 1;
+    scale: 1.04;
+    translate: 0 -2px;
+    filter:
+      drop-shadow(
+        0 0 9px
+        rgba(255, 255, 170, 0.95)
+      )
+      drop-shadow(
+        0 0 22px
+        rgba(70, 225, 255, 0.85)
+      );
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+    translate: 0 0;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+}
+
+@keyframes home-title-reveal {
+  from {
+    opacity: 0;
+    scale: 0.94;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+@keyframes home-control-reveal {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes home-page-fade {
+  0%,
+  34% {
+    opacity: 1;
+  }
+
+  72%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 首页到入口页烟雾过渡 */
+
+.mist-transition {
+  position: absolute;
+  z-index: 50;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: rgba(235, 249, 255, 0.12);
+  animation:
+    mist-veil
+    2600ms
+    ease-in-out
+    forwards;
+}
+
+.mist-transition span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 48%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.98) 0 25%,
+      rgba(220, 244, 255, 0.82) 48%,
+      rgba(255, 255, 255, 0) 75%
+    );
+  filter: blur(14px);
+  opacity: 0;
+  animation:
+    mist-puff
+    2600ms
+    cubic-bezier(0.2, 0.65, 0.25, 1)
+    forwards;
+}
+
+.mist-transition span:nth-child(1) {
+  --mist-x: -145%;
+  --mist-y: -150%;
+  animation-delay: 0ms;
+}
+
+.mist-transition span:nth-child(2) {
+  --mist-x: 45%;
+  --mist-y: -155%;
+  animation-delay: 80ms;
+}
+
+.mist-transition span:nth-child(3) {
+  --mist-x: -165%;
+  --mist-y: -80%;
+  animation-delay: 150ms;
+}
+
+.mist-transition span:nth-child(4) {
+  --mist-x: 55%;
+  --mist-y: -65%;
+  animation-delay: 40ms;
+}
+
+.mist-transition span:nth-child(5) {
+  --mist-x: -170%;
+  --mist-y: 5%;
+  animation-delay: 210ms;
+}
+
+.mist-transition span:nth-child(6) {
+  --mist-x: 60%;
+  --mist-y: 10%;
+  animation-delay: 120ms;
+}
+
+.mist-transition span:nth-child(7) {
+  --mist-x: -155%;
+  --mist-y: 85%;
+  animation-delay: 270ms;
+}
+
+.mist-transition span:nth-child(8) {
+  --mist-x: 50%;
+  --mist-y: 90%;
+  animation-delay: 180ms;
+}
+
+.mist-transition span:nth-child(9) {
+  --mist-x: -145%;
+  --mist-y: 155%;
+  animation-delay: 330ms;
+}
+
+.mist-transition span:nth-child(10) {
+  --mist-x: 40%;
+  --mist-y: 150%;
+  animation-delay: 240ms;
+}
+
+.mist-transition span:nth-child(11) {
+  --mist-x: -60%;
+  --mist-y: -120%;
+  animation-delay: 100ms;
+}
+
+.mist-transition span:nth-child(12) {
+  --mist-x: -55%;
+  --mist-y: 115%;
+  animation-delay: 300ms;
+}
+
+@keyframes mist-puff {
   0% {
     opacity: 0;
-    transform: translateY(24px) scale(0.72) rotateY(-85deg);
+    scale: 0.2;
+    translate: -50% -50%;
   }
+
+  30% {
+    opacity: 0.98;
+  }
+
+  58% {
+    opacity: 0.9;
+    scale: 2.25;
+  }
+
+  100% {
+    opacity: 0;
+    scale: 3.3;
+    translate:
+      var(--mist-x)
+      var(--mist-y);
+  }
+}
+
+@keyframes mist-veil {
+  0%,
+  100% {
+    opacity: 0;
+  }
+
+  35%,
+  62% {
+    opacity: 1;
+  }
+}
+
+/* i神/e神入口页 */
+
+.entry-page {
+  z-index: 2;
+  background-color: #83b8ed;
+}
+
+.entry-page-revealing {
+  pointer-events: none;
+  opacity: 0;
+  animation:
+    entry-page-reveal
+    2600ms
+    ease-in-out
+    forwards;
+}
+
+.entry-page-revealing button:disabled {
+  filter: none;
+  opacity: 1;
+}
+
+@keyframes entry-page-reveal {
+  0%,
+  43% {
+    opacity: 0;
+  }
+
+  76%,
+  100% {
+    opacity: 1;
+  }
+}
+
+.decor-layer img {
+  position: absolute;
+  height: auto;
+  max-width: none;
+}
+
+.booklet {
+  position: absolute;
+  transition:
+    transform
+    0.2s
+    cubic-bezier(0.2, 0.9, 0.25, 1);
+}
+
+.booklet img {
+  width: 100%;
+}
+
+.booklet:active {
+  transform: scale(1.13);
+}
+
+.booklet-selected {
+  animation:
+    booklet-selected-pop
+    520ms
+    cubic-bezier(0.18, 0.9, 0.2, 1)
+    forwards;
+}
+
+.entry-page-sliding-out {
+  z-index: 4;
+  pointer-events: none;
+  animation:
+    entry-page-slide-out
+    520ms
+    cubic-bezier(0.65, 0, 0.35, 1)
+    forwards;
+}
+
+.entry-page-sliding-out .booklet:disabled {
+  filter: none;
+  opacity: 1;
+}
+
+.entry-page-sliding-in {
+  z-index: 4;
+  pointer-events: none;
+  animation:
+    entry-page-slide-in
+    480ms
+    cubic-bezier(0.22, 0.75, 0.3, 1)
+    forwards;
+}
+
+@keyframes booklet-selected-pop {
+  0% {
+    scale: 1;
+    filter: brightness(1);
+  }
+
+  55% {
+    scale: 1.2;
+    filter:
+      brightness(1.12)
+      drop-shadow(
+        0 8px 16px
+        rgba(58, 70, 115, 0.3)
+      );
+  }
+
+  100% {
+    scale: 1.12;
+    filter:
+      brightness(1.05)
+      drop-shadow(
+        0 5px 12px
+        rgba(58, 70, 115, 0.24)
+      );
+  }
+}
+
+@keyframes entry-page-slide-out {
+  0%,
+  22% {
+    translate: 0 0;
+  }
+
+  100% {
+    translate: -100% 0;
+  }
+}
+
+@keyframes entry-page-slide-in {
+  from {
+    translate: -100% 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+/* MBTI选择页 */
+
+.select-page {
+  z-index: 3;
+}
+
+.select-page-sliding-in {
+  pointer-events: none;
+  animation:
+    select-page-slide-in
+    520ms
+    cubic-bezier(0.22, 0.75, 0.3, 1)
+    forwards;
+}
+
+.select-page-sliding-out {
+  pointer-events: none;
+  animation:
+    select-page-slide-out
+    480ms
+    cubic-bezier(0.65, 0, 0.35, 1)
+    forwards;
+}
+
+@keyframes select-page-slide-in {
+  0%,
+  22% {
+    translate: 100% 0;
+  }
+
+  100% {
+    translate: 0 0;
+  }
+}
+
+@keyframes select-page-slide-out {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: 32% 0;
+    opacity: 0.75;
+  }
+}
+
+.select-title {
+  position: absolute;
+  top: 10.8%;
+  left: 9%;
+  width: 54%;
+}
+
+.mbti-grid {
+  position: absolute;
+  inset: 0;
+}
+
+.mbti-grid button {
+  position: absolute;
+  display: block;
+  height: auto;
+}
+
+.mbti-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.select-page-to-detail {
+  z-index: 5;
+  pointer-events: none;
+  animation:
+    select-to-detail
+    680ms
+    cubic-bezier(0.65, 0, 0.35, 1)
+    forwards;
+}
+
+.select-page-from-detail {
+  z-index: 7;
+  pointer-events: none;
+  animation:
+    select-from-detail
+    520ms
+    cubic-bezier(0.22, 0.75, 0.3, 1)
+    forwards;
+}
+
+@keyframes select-to-detail {
+  0%,
+  18% {
+    translate: 0 0;
+  }
+
+  100% {
+    translate: -100% 0;
+  }
+}
+
+@keyframes select-from-detail {
+  from {
+    translate: -100% 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+/* 神明详情页 */
+
+.detail-page {
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+}
+
+.detail-background {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background-position: center top;
+  background-size: 100% 100%;
+}
+
+.detail-page-entering {
+  pointer-events: none;
+}
+
+.detail-page-entering .detail-background {
+  animation:
+    detail-background-in
+    560ms
+    cubic-bezier(0.22, 0.75, 0.3, 1)
+    both;
+}
+
+.detail-page-entering > .back-button,
+.detail-page-entering > .wide-action {
+  opacity: 0;
+  animation:
+    detail-content-in
+    280ms
+    1550ms
+    ease-out
+    both;
+}
+
+.detail-page-entering .deity-card-center .stack-main {
+  animation:
+    detail-card-drop-main
+    820ms
+    560ms
+    cubic-bezier(0.2, 0.75, 0.25, 1)
+    both;
+}
+
+.detail-page-entering .deity-card-right .stack-back {
+  animation:
+    detail-card-drop-one
+    820ms
+    710ms
+    cubic-bezier(0.2, 0.75, 0.25, 1)
+    both;
+}
+
+.detail-page-entering .deity-card-left .stack-back {
+  animation:
+    detail-card-drop-two
+    820ms
+    860ms
+    cubic-bezier(0.2, 0.75, 0.25, 1)
+    both;
+}
+
+.detail-page-returning {
+  pointer-events: none;
+  animation:
+    detail-page-out
+    520ms
+    ease-out
+    forwards;
+}
+
+@keyframes detail-background-in {
+  from {
+    translate: 100% 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+@keyframes detail-content-in {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes detail-card-drop-main {
+  0% {
+    opacity: 0;
+    translate: 0 -125%;
+    rotate: -3deg;
+  }
+
+  62% {
+    opacity: 1;
+    translate: 0 3%;
+    rotate: 1.2deg;
+  }
+
+  78% {
+    translate: 0 -1.4%;
+    rotate: -0.6deg;
+  }
+
+  90% {
+    translate: 0 0.5%;
+    rotate: 0.2deg;
+  }
+
+  100% {
+    opacity: 1;
+    translate: 0 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes detail-card-drop-one {
+  0% {
+    opacity: 0;
+    translate: 0 -135%;
+    rotate: 4deg;
+  }
+
+  62% {
+    opacity: 0.7;
+    translate: 0 3.5%;
+    rotate: -1.4deg;
+  }
+
+  78% {
+    translate: 0 -1.5%;
+    rotate: 0.7deg;
+  }
+
+  90% {
+    translate: 0 0.6%;
+    rotate: -0.25deg;
+  }
+
+  100% {
+    opacity: 0.7;
+    translate: 0 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes detail-card-drop-two {
+  0% {
+    opacity: 0;
+    translate: 0 -145%;
+    rotate: -4.5deg;
+  }
+
+  62% {
+    opacity: 0.55;
+    translate: 0 4%;
+    rotate: 1.5deg;
+  }
+
+  78% {
+    translate: 0 -1.7%;
+    rotate: -0.75deg;
+  }
+
+  90% {
+    translate: 0 0.7%;
+    rotate: 0.25deg;
+  }
+
+  100% {
+    opacity: 0.55;
+    translate: 0 0;
+    rotate: 0deg;
+  }
+}
+
+@keyframes detail-page-out {
+  to {
+    translate: 25% 0;
+    opacity: 0.72;
+  }
+}
+
+/* 神明卡片五槽位滑动牌组 */
+
+.card-stack {
+  position: absolute;
+  top: 10.5%;
+  left: 50%;
+  width: 76%;
+  height: 70%;
+  overflow: visible;
+  transform: translateX(-50%);
+  user-select: none;
+  -webkit-user-select: none;
+  isolation: isolate;
+}
+
+.deity-card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform-origin: 50% 17%;
+  transform: var(--card-transform);
+  filter: var(--card-filter);
+  opacity: var(--card-opacity);
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: layout paint style;
+}
+
+.deity-card:active {
+  transform: var(--card-transform);
+}
+
+.deity-card:disabled {
+  cursor: default;
+
+  /* 覆盖全局 button:disabled 的灰度和半透明效果 */
+  filter: var(--card-filter);
+  opacity: var(--card-opacity);
+}
+
+.deity-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.deity-card-center {
+  --card-transform:
+    translate3d(0, 0, 0)
+    rotate(0deg)
+    scale(1);
+  --card-filter: blur(0);
+  --card-opacity: 1;
+
+  z-index: 5;
+  touch-action: pan-y;
+}
+
+.deity-card-left {
+  --card-transform:
+    translate3d(-11%, 1.5%, 0)
+    rotate(-4deg)
+    scale(0.96);
+  --card-filter: blur(3px);
+  --card-opacity: 0.55;
+
+  z-index: 2;
+  pointer-events: none;
+}
+
+.deity-card-right {
+  --card-transform:
+    translate3d(11%, 1.5%, 0)
+    rotate(4deg)
+    scale(0.96);
+  --card-filter: blur(2px);
+  --card-opacity: 0.7;
+
+  z-index: 3;
+  pointer-events: none;
+}
+
+.deity-card-far-left {
+  --card-transform:
+    translate3d(-19%, 2.5%, 0)
+    rotate(-6deg)
+    scale(0.92);
+  --card-filter: blur(5px);
+  --card-opacity: 0;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.deity-card-far-right {
+  --card-transform:
+    translate3d(19%, 2.5%, 0)
+    rotate(6deg)
+    scale(0.92);
+  --card-filter: blur(5px);
+  --card-opacity: 0;
+
+  z-index: 1;
+  pointer-events: none;
+}
+
+.deity-card-center:disabled {
+  opacity: 1;
+}
+
+.stack-main,
+.stack-back {
+  transform: none;
+  filter: none;
+  opacity: 1;
+}
+
+/* 两个方向共用完全相同的时长和缓动 */
+
+.card-stack-next,
+.card-stack-previous {
+  pointer-events: none;
+}
+
+/* 向左滑动 */
+
+.card-stack-next .deity-card-center {
+  animation:
+    card-center-to-left
+    840ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.card-stack-next .deity-card-left {
+  animation:
+    card-left-to-hidden
+    840ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.card-stack-next .deity-card-right {
+  animation:
+    card-right-to-center
+    840ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.card-stack-next .deity-card-far-right {
+  animation:
+    card-hidden-to-right
+    840ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+/* 向右滑动 */
+
+.card-stack-previous .deity-card-center {
+  animation:
+    card-center-to-right
+    840ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.card-stack-previous .deity-card-left {
+  animation:
+    card-left-to-center
+    840ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.card-stack-previous .deity-card-right {
+  animation:
+    card-right-to-hidden
+    840ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+.card-stack-previous .deity-card-far-left {
+  animation:
+    card-hidden-to-left
+    840ms
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+/*
+ * 当前主卡先向左移出。
+ * 到达最外侧后切换至后层，再回到左侧虚化位置。
+ */
+
+@keyframes card-center-to-left {
+  0% {
+    z-index: 6;
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg)
+      scale(1);
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  48% {
+    z-index: 6;
+    transform:
+      translate3d(-48%, -0.5%, 0)
+      rotate(-7deg)
+      scale(0.97);
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  49% {
+    z-index: 2;
+  }
+
+  100% {
+    z-index: 2;
+    transform:
+      translate3d(-11%, 1.5%, 0)
+      rotate(-4deg)
+      scale(0.96);
+    filter: blur(3px);
+    opacity: 0.55;
+  }
+}
+
+/* 右侧虚化卡在主卡移开后进入中央 */
+
+@keyframes card-right-to-center {
+  0%,
+  38% {
+    z-index: 3;
+    transform:
+      translate3d(11%, 1.5%, 0)
+      rotate(4deg)
+      scale(0.96);
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+
+  49% {
+    z-index: 6;
+  }
+
+  100% {
+    z-index: 6;
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg)
+      scale(1);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* 原左侧卡隐藏到预载区 */
+
+@keyframes card-left-to-hidden {
+  from {
+    transform:
+      translate3d(-11%, 1.5%, 0)
+      rotate(-4deg)
+      scale(0.96);
+    filter: blur(3px);
+    opacity: 0.55;
+  }
+
+  to {
+    transform:
+      translate3d(-19%, 2.5%, 0)
+      rotate(-6deg)
+      scale(0.92);
+    filter: blur(5px);
+    opacity: 0;
+  }
+}
+
+/* 新的右侧卡从隐藏区进入 */
+
+@keyframes card-hidden-to-right {
+  0%,
+  38% {
+    transform:
+      translate3d(19%, 2.5%, 0)
+      rotate(6deg)
+      scale(0.92);
+    filter: blur(5px);
+    opacity: 0;
+  }
+
+  100% {
+    transform:
+      translate3d(11%, 1.5%, 0)
+      rotate(4deg)
+      scale(0.96);
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+}
+
+/*
+ * 向右滑动。
+ * 与向左动画完全镜像。
+ */
+
+@keyframes card-center-to-right {
+  0% {
+    z-index: 6;
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg)
+      scale(1);
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  48% {
+    z-index: 6;
+    transform:
+      translate3d(48%, -0.5%, 0)
+      rotate(7deg)
+      scale(0.97);
+    filter: blur(0);
+    opacity: 1;
+  }
+
+  49% {
+    z-index: 3;
+  }
+
+  100% {
+    z-index: 3;
+    transform:
+      translate3d(11%, 1.5%, 0)
+      rotate(4deg)
+      scale(0.96);
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+}
+
+/* 左侧虚化卡在主卡移开后进入中央 */
+
+@keyframes card-left-to-center {
+  0%,
+  38% {
+    z-index: 2;
+    transform:
+      translate3d(-11%, 1.5%, 0)
+      rotate(-4deg)
+      scale(0.96);
+    filter: blur(3px);
+    opacity: 0.55;
+  }
+
+  49% {
+    z-index: 6;
+  }
+
+  100% {
+    z-index: 6;
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg)
+      scale(1);
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+/* 原右侧卡隐藏到预载区 */
+
+@keyframes card-right-to-hidden {
+  from {
+    transform:
+      translate3d(11%, 1.5%, 0)
+      rotate(4deg)
+      scale(0.96);
+    filter: blur(2px);
+    opacity: 0.7;
+  }
+
+  to {
+    transform:
+      translate3d(19%, 2.5%, 0)
+      rotate(6deg)
+      scale(0.92);
+    filter: blur(5px);
+    opacity: 0;
+  }
+}
+
+/* 新的左侧卡从隐藏区进入 */
+
+@keyframes card-hidden-to-left {
+  0%,
+  38% {
+    transform:
+      translate3d(-19%, 2.5%, 0)
+      rotate(-6deg)
+      scale(0.92);
+    filter: blur(5px);
+    opacity: 0;
+  }
+
+  100% {
+    transform:
+      translate3d(-11%, 1.5%, 0)
+      rotate(-4deg)
+      scale(0.96);
+    filter: blur(3px);
+    opacity: 0.55;
+  }
+}
+
+/* 神明详情页“选择 TA”按钮 */
+
+.detail-page > .wide-action {
+  position: absolute;
+  z-index: 12;
+  left: 50%;
+  bottom: 10.8%;
+
+  /*
+   * 参考图页面宽度为 1638px，
+   * 按钮素材宽度为 554px。
+   */
+  width: 33.82%;
+  max-width: 33.82%;
+  height: auto;
+  aspect-ratio: 554 / 237;
+
+  transform: translate3d(-50%, 0, 0);
+  filter: none;
+  opacity: 1;
+
+  isolation: isolate;
+  contain: layout paint style;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.detail-page > .wide-action img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  filter: none;
+  opacity: 1;
+}
+
+.detail-page > .wide-action:active {
+  transform:
+    translate3d(-50%, 0, 0)
+    scale(0.97);
+}
+
+/* 神明选择页进入填写问题页 */
+
+.detail-page-to-question {
+  z-index: 7;
+  pointer-events: none;
+  animation:
+    detail-to-question
+    680ms
+    cubic-bezier(0.65, 0, 0.35, 1)
+    forwards;
+}
+
+.question-page-entering {
+  z-index: 6;
+  pointer-events: none;
+  animation:
+    question-page-from-right
+    680ms
+    cubic-bezier(0.65, 0, 0.35, 1)
+    both;
+}
+
+@keyframes detail-to-question {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: -100% 0;
+  }
+}
+
+@keyframes question-page-from-right {
+  from {
+    translate: 100% 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+/* 提问页 */
+
+.question-page {
+  z-index: 5;
+}
+
+.question-stage {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 46.3662%;
+  max-width: none;
+  object-fit: fill;
+}
+
+.question-input {
+  position: absolute;
+  z-index: 2;
+  top: 46.3662%;
+  left: 0;
+  width: 100%;
+  height: 40.6479%;
+}
+
+.question-input > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+  pointer-events: none;
+}
+
+.question-input textarea {
+  position: absolute;
+  top: 10.05%;
+  left: 11.9%;
+  width: 76.2%;
+  height: 79%;
+
+  margin: 0;
+  padding: 0;
+  resize: none;
+  overflow: auto;
+
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+  background: transparent;
+  box-shadow: none;
+
+  color: #0071bc;
+  caret-color: #0071bc;
+
+  font-family:
+    "Xinyi Jixiang Song",
+    "Songti SC",
+    "SimSun",
+    serif;
+  font-size: min(4.95vw, 21.3px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+
+  -webkit-font-smoothing: antialiased;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.question-input textarea::placeholder {
+  color: #999999;
+  font-family:
+    "Xinyi Jixiang Song",
+    "Songti SC",
+    "SimSun",
+    serif;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: 400;
+  line-height: inherit;
+  opacity: 1;
+}
+
+.question-confirm {
+  position: absolute;
+  z-index: 3;
+  bottom: 4.3%;
+  left: 50%;
+  width: 33.82%;
+  max-width: 33.82%;
+  height: auto;
+  margin: 0;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.question-confirm img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+.question-confirm:active {
+  transform:
+    translate3d(-50%, 0, 0)
+    scale(0.97);
+}
+
+/* 填写问题页进入签文页 */
+
+.question-page-to-oracle {
+  z-index: 8;
+  pointer-events: none;
+  animation:
+    question-page-out-to-oracle
+    680ms
+    cubic-bezier(0.65, 0, 0.35, 1)
+    forwards;
+}
+
+.oracle-page-entering {
+  z-index: 7;
+  pointer-events: none;
+  animation:
+    oracle-page-from-right
+    680ms
+    cubic-bezier(0.65, 0, 0.35, 1)
+    both;
+}
+
+@keyframes question-page-out-to-oracle {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: -100% 0;
+  }
+}
+
+@keyframes oracle-page-from-right {
+  from {
+    translate: 100% 0;
+  }
+
+  to {
+    translate: 0 0;
+  }
+}
+
+/* 恢复签文页、结果页和保存页的通用布局 */
+
+.oracle-page,
+.result-page,
+.save-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.oracle-paper {
+  position: absolute;
+  z-index: 2;
+  top: 10.8%;
+  left: 50%;
+  width: 78.6%;
+  height: 70.87%;
+  max-width: none;
+  object-fit: contain;
+
+  transform:
+    translate3d(-50%, 0, 0);
+  transform-origin: 50% 90%;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change:
+    transform,
+    filter,
+    opacity;
+}
+
+/* 黄色签文从页面底部抽出 */
+
+.oracle-page-drawing {
+  pointer-events: none;
+}
+
+.oracle-page-drawing .oracle-paper {
+  animation:
+    oracle-paper-draw-up
+    1150ms
+    cubic-bezier(0.2, 0.82, 0.25, 1)
+    both;
+}
+
+@keyframes oracle-paper-draw-up {
+  0% {
+    transform:
+      translate3d(-50%, 115%, 0)
+      rotate(0deg);
+    filter:
+      drop-shadow(
+        0 0 0
+        rgba(255, 242, 96, 0)
+      );
+    opacity: 0;
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  64% {
+    transform:
+      translate3d(-50%, -1.8%, 0)
+      rotate(-0.45deg);
+    filter:
+      drop-shadow(
+        0 0 8px
+        rgba(255, 246, 120, 0.62)
+      )
+      drop-shadow(
+        0 0 18px
+        rgba(255, 224, 72, 0.3)
+      );
+  }
+
+  76% {
+    transform:
+      translate3d(-50%, 0.9%, 0)
+      rotate(0.28deg);
+    filter:
+      drop-shadow(
+        0 0 6px
+        rgba(255, 246, 120, 0.48)
+      );
+  }
+
+  86% {
+    transform:
+      translate3d(-50%, -0.4%, 0)
+      rotate(-0.14deg);
+  }
+
+  94% {
+    transform:
+      translate3d(-50%, 0.18%, 0)
+      rotate(0.06deg);
+  }
+
+  100% {
+    transform:
+      translate3d(-50%, 0, 0)
+      rotate(0deg);
+    filter:
+      drop-shadow(
+        0 0 0
+        rgba(255, 242, 96, 0)
+      );
+    opacity: 1;
+  }
+}
+
+.dual-actions {
+  position: absolute;
+  right: 9%;
+  bottom: 7.3%;
+  left: 9%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15%;
+}
+
+/* 签文稳定后再显示操作按钮 */
+
+.oracle-actions {
+  z-index: 4;
+  opacity: 0;
+  animation:
+    oracle-actions-show
+    320ms
+    ease-out
+    forwards;
+}
+
+@keyframes oracle-actions-show {
+  from {
+    translate: 0 12px;
+    opacity: 0;
+  }
+
+  to {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
+
+/* 茭杯等待页 */
+
+.cup-loading-page {
+  background: #fffef8;
+  isolation: isolate;
+  pointer-events: none;
+}
+
+.cup-glow {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+
+  animation:
+    cup-glow-breathe
+    3000ms
+    ease-in-out
+    both;
+}
+
+.cup-title {
+  position: absolute;
+  z-index: 3;
+  top: 59%;
+  left: 50%;
+  width: 27%;
+  max-width: none;
+
+  transform: translate3d(-50%, 0, 0);
+
+  animation:
+    cup-title-breathe
+    3000ms
+    ease-in-out
+    both;
+}
+
+/*
+ * 三个圆点覆盖在原“虔诚中”素材的静态圆点上。
+ * 定位和尺寸直接按照 384 × 283 的原始素材换算。
+ */
+
+.cup-progress {
+  position: absolute;
+  z-index: 5;
+  top: 59%;
+  left: 50%;
+  width: 27%;
+  aspect-ratio: 384 / 283;
+
+  transform: translate3d(-50%, 0, 0);
+  pointer-events: none;
+}
+
+.cup-progress-dot {
+  position: absolute;
+  top: 6.7138%;
+  width: 14.8438%;
+  aspect-ratio: 1;
+
+  border: 1px solid #4d4812;
+  border-radius: 50%;
+  background: #b5aa00;
+
+  box-shadow:
+    0 0 0 rgba(255, 244, 91, 0);
+
+  will-change:
+    background-color,
+    box-shadow,
+    filter;
+}
+
+/* 对应原素材中三个圆点的水平位置 */
+
+.cup-progress-dot-left {
+  left: 2.8646%;
+  animation:
+    cup-dot-left-light
+    3000ms
+    linear
+    both;
+}
+
+.cup-progress-dot-middle {
+  left: 41.6667%;
+  animation:
+    cup-dot-middle-light
+    3000ms
+    linear
+    both;
+}
+
+.cup-progress-dot-right {
+  left: 79.1667%;
+  animation:
+    cup-dot-right-light
+    3000ms
+    linear
+    both;
+}
+
+/* 左侧圆点首先点亮 */
+
+@keyframes cup-dot-left-light {
+  0%,
+  8% {
+    background: #b5aa00;
+    box-shadow:
+      0 0 0 rgba(255, 244, 91, 0);
+    filter: brightness(1);
+  }
+
+  14%,
+  100% {
+    background: #fff45b;
+    box-shadow:
+      0 0 5px rgba(255, 244, 91, 0.85),
+      0 0 11px rgba(255, 225, 55, 0.55);
+    filter: brightness(1.12);
+  }
+}
+
+/* 中间圆点在动画中段点亮 */
+
+@keyframes cup-dot-middle-light {
+  0%,
+  41% {
+    background: #b5aa00;
+    box-shadow:
+      0 0 0 rgba(255, 244, 91, 0);
+    filter: brightness(1);
+  }
+
+  47%,
+  100% {
+    background: #fff45b;
+    box-shadow:
+      0 0 5px rgba(255, 244, 91, 0.85),
+      0 0 11px rgba(255, 225, 55, 0.55);
+    filter: brightness(1.12);
+  }
+}
+
+/* 最右侧圆点在茭杯动画结束前点亮 */
+
+@keyframes cup-dot-right-light {
+  0%,
+  76% {
+    background: #b5aa00;
+    box-shadow:
+      0 0 0 rgba(255, 244, 91, 0);
+    filter: brightness(1);
+  }
+
+  82%,
+  100% {
+    background: #fff45b;
+    box-shadow:
+      0 0 5px rgba(255, 244, 91, 0.85),
+      0 0 11px rgba(255, 225, 55, 0.55);
+    filter: brightness(1.12);
+  }
+}
+
+/*
+ * 茭杯容器覆盖整个页面。
+ * 左右茭杯分别按照参考图坐标独立定位。
+ */
+
+.cups {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+
+  transform-origin: 50% 52%;
+  will-change: transform;
+
+  animation:
+    cups-toss-lift
+    3000ms
+    cubic-bezier(0.37, 0, 0.2, 1)
+    both;
+}
+
+.cup-piece {
+  position: absolute;
+  display: block;
+  height: auto;
+  max-width: none;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+}
+
+/*
+ * 左侧茭杯参考图原始坐标：
+ * x = 443px
+ * y = 1306px
+ * w = 379px
+ * h = 617px
+ */
+
+.cup-piece-left {
+  top: 36.7887%;
+  left: 27.0452%;
+  width: 23.138%;
+
+  transform-origin: 78% 62%;
+
+  animation:
+    cup-left-toss
+    3000ms
+    cubic-bezier(0.37, 0, 0.2, 1)
+    both;
+}
+
+/*
+ * 右侧茭杯参考图原始坐标：
+ * x = 870px
+ * y = 1435px
+ * w = 352px
+ * h = 625px
+ */
+
+.cup-piece-right {
+  top: 40.4225%;
+  left: 53.1136%;
+  width: 21.4896%;
+
+  transform-origin: 22% 62%;
+
+  animation:
+    cup-right-toss
+    3000ms
+    cubic-bezier(0.37, 0, 0.2, 1)
+    both;
+}
+
+/* 整组茭杯上抛、悬停、落下和回弹 */
+
+@keyframes cups-toss-lift {
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  10% {
+    transform:
+      translate3d(0, -1%, 0)
+      scale(1.005);
+  }
+
+  30% {
+    transform:
+      translate3d(0, -6.2%, 0)
+      scale(1.015);
+  }
+
+  46% {
+    transform:
+      translate3d(0, -7.6%, 0)
+      scale(1.02);
+  }
+
   60% {
-    opacity: 1;
-    transform: translateY(-6px) scale(1.03) rotateY(8deg);
+    transform:
+      translate3d(0, -6.5%, 0)
+      scale(1.015);
   }
+
+  76% {
+    transform:
+      translate3d(0, -2%, 0)
+      scale(1.006);
+  }
+
+  84% {
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+
+  90% {
+    transform:
+      translate3d(0, -0.7%, 0)
+      scale(1.004);
+  }
+
+  96% {
+    transform:
+      translate3d(0, 0.25%, 0)
+      scale(0.998);
+  }
+
   100% {
-    opacity: 1;
-    transform: translateY(0) scale(1) rotateY(0deg);
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
   }
 }
 
-@keyframes paper-rise {
+/* 左侧茭杯轻微向外翻转 */
+
+@keyframes cup-left-toss {
   0% {
-    opacity: 0;
-    transform: translateY(100%);
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
   }
+
+  22% {
+    transform:
+      translate3d(-3%, -1%, 0)
+      rotate(-4deg);
+  }
+
+  46% {
+    transform:
+      translate3d(-5%, -2%, 0)
+      rotate(-7deg);
+  }
+
+  65% {
+    transform:
+      translate3d(-2%, 0, 0)
+      rotate(-3deg);
+  }
+
+  84% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(1deg);
+  }
+
+  92% {
+    transform:
+      translate3d(-1%, -1%, 0)
+      rotate(-1.2deg);
+  }
+
   100% {
-    opacity: 1;
-    transform: translateY(0);
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
   }
 }
 
-.animate-card-reveal {
-  animation: card-reveal 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-  transform-style: preserve-3d;
+/* 右侧茭杯与左侧形成轻微错位 */
+
+@keyframes cup-right-toss {
+  0% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
+
+  22% {
+    transform:
+      translate3d(3%, 1%, 0)
+      rotate(3deg);
+  }
+
+  46% {
+    transform:
+      translate3d(5%, -1%, 0)
+      rotate(6deg);
+  }
+
+  65% {
+    transform:
+      translate3d(2%, 1%, 0)
+      rotate(2.5deg);
+  }
+
+  84% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(-1deg);
+  }
+
+  92% {
+    transform:
+      translate3d(1%, -0.5%, 0)
+      rotate(1deg);
+  }
+
+  100% {
+    transform:
+      translate3d(0, 0, 0)
+      rotate(0deg);
+  }
 }
 
-.animate-paper-rise {
-  animation: paper-rise 520ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+/* 中央光晕随上抛动作轻微增强 */
+
+@keyframes cup-glow-breathe {
+  0%,
+  100% {
+    opacity: 0.86;
+    filter: saturate(0.96);
+  }
+
+  38%,
+  58% {
+    opacity: 1;
+    filter:
+      saturate(1.06)
+      brightness(1.02);
+  }
+
+  84% {
+    opacity: 0.92;
+    filter: saturate(1);
+  }
 }
 
-@media (min-width: 380px) {
-  main {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+/* “虔诚中”随投掷过程轻微呼吸 */
+
+@keyframes cup-title-breathe {
+  0%,
+  100% {
+    transform:
+      translate3d(-50%, 0, 0)
+      scale(1);
+    opacity: 0.82;
+  }
+
+  35% {
+    transform:
+      translate3d(-50%, 0, 0)
+      scale(1.025);
+    opacity: 1;
+  }
+
+  55% {
+    transform:
+      translate3d(-50%, 0, 0)
+      scale(0.99);
+    opacity: 0.88;
+  }
+
+  75% {
+    transform:
+      translate3d(-50%, 0, 0)
+      scale(1.015);
+    opacity: 1;
+  }
+}
+
+/* 茭杯结果页 */
+
+.result-oracle-paper {
+  position: absolute;
+  top: 4.5%;
+  width: 67%;
+  height: 61%;
+  object-fit: contain;
+}
+
+/* 茭杯结果完整面板 */
+.result-graphic-panel {
+  position: absolute;
+  top: 66.14%;
+  left: 50%;
+
+  width: 82.17%;
+  aspect-ratio: 1346 / 812;
+
+  transform: translateX(-50%);
+  overflow: visible;
+}
+
+/*
+ * 第一层：
+ * 直接使用显示正确的阳杯图片，
+ * 只为了取得完全一致的蓝色边线和四角金色纹样。
+ */
+.result-graphic-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image: url("/codex-assets/09_cup_result_assets/result_graphics/09-cup-result-yang.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
+/*
+ * 第二层：
+ * 用白色盖住底层阳杯图片中的橙色标题和茭杯，
+ * 保留外围蓝色边线与四角金色纹样。
+ */
+.result-graphic-panel::after {
+  content: "";
+  position: absolute;
+
+  /*
+   * 对应1346 × 812素材中的内部白色区域：
+   * 左右各保留约58px边框；
+   * 上下保留完整线条和角落纹样。
+   */
+  top: 7.15%;
+  right: 4.31%;
+  bottom: 7.15%;
+  left: 4.31%;
+
+  z-index: 1;
+  background-color: #ffffff;
+}
+
+/*
+ * 第三层：
+ * 显示阴杯／阳杯／笑杯自己的标题与杯型。
+ */
+.result-graphic {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: fill;
+
+  background: transparent;
+  transform: none;
+}
+
+.result-actions {
+  bottom: 5.8%;
+}
+
+/* 签文页／茭杯结果页向左退出 */
+
+.save-transition-source {
+  z-index: 31;
+  pointer-events: none;
+  animation:
+    save-page-slide-out
+    520ms
+    cubic-bezier(0.72, 0, 0.28, 1)
+    both;
+}
+
+/* 左滑过程中，下一页只显示保存页背景 */
+
+.save-transition-background {
+  z-index: 30;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+
+  pointer-events: none;
+
+  animation:
+    save-page-background-slide-in
+    520ms
+    cubic-bezier(0.72, 0, 0.28, 1)
+    both;
+}
+
+@keyframes save-page-slide-out {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes save-page-background-slide-in {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* 最终保存页 */
+
+/* 最终保存页 */
+
+.save-card {
+  position: absolute;
+  top: 1%;
+  left: 50%;
+
+  width: 85%;
+  height: 84%;
+
+  display: block;
+  object-fit: contain;
+
+  transform: translateX(-50%);
+  transform-origin: 50% 5%;
+
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/*
+ * 参考视频：
+ * 卡片先从画面上方快速掉下，
+ * 到达落点后以顶部绳结为中心左右摆动，
+ * 振幅逐渐减小，最终稳定。
+ */
+.save-card-dropping {
+  animation:
+    save-card-drop
+    2.8s
+    cubic-bezier(0.22, 0.75, 0.25, 1)
+    both;
+}
+
+@keyframes save-card-drop {
+  0% {
+    transform:
+      translate3d(-50%, -125%, 0)
+      rotate(-7deg);
+  }
+
+  18% {
+    transform:
+      translate3d(-50%, 0, 0)
+      rotate(0deg);
+  }
+
+  34% {
+    transform:
+      translate3d(-50%, -1.5%, 0)
+      rotate(6deg);
+  }
+
+  49% {
+    transform:
+      translate3d(-50%, 0, 0)
+      rotate(-4.5deg);
+  }
+
+  63% {
+    transform:
+      translate3d(-50%, -0.5%, 0)
+      rotate(3deg);
+  }
+
+  76% {
+    transform:
+      translate3d(-50%, 0, 0)
+      rotate(-1.8deg);
+  }
+
+  88% {
+    transform:
+      translate3d(-50%, 0, 0)
+      rotate(0.8deg);
+  }
+
+  100% {
+    transform:
+      translate3d(-50%, 0, 0)
+      rotate(0deg);
+  }
+}
+
+.save-tip {
+  position: absolute;
+  top: 87%;
+  left: 50%;
+
+  width: 35%;
+
+  transform: translateX(-50%);
+}
+
+/* 卡片基本稳定后再显示长按保存提示 */
+
+.save-tip-delayed {
+  animation:
+    save-tip-appear
+    260ms
+    ease-out
+    2.65s
+    both;
+}
+
+@keyframes save-tip-appear {
+  from {
+    opacity: 0;
+    transform:
+      translate3d(-50%, 8px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translate3d(-50%, 0, 0);
+  }
+}
+
+@media (min-width: 431px) {
+  .app-shell {
+    width: 393px;
+    height: min(100dvh, 852px);
   }
 }
