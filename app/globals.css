@@ -17,9 +17,22 @@
 
 html,
 body {
+  width: 100%;
   min-height: 100%;
   margin: 0;
+  overflow: hidden;
   background: #d9c7a4;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 body {
@@ -59,25 +72,47 @@ img {
 
 .app-shell {
   position: relative;
-  width: min(100vw, 430px);
+  width: 100vw;
   height: 100dvh;
-  min-height: 600px;
-  max-height: 932px;
-  margin: 0 auto;
+  flex: 0 0 auto;
   overflow: hidden;
   background: #f5ead4;
-  box-shadow: 0 0 35px #4d3b2860;
 }
 
 .page {
   position: absolute;
+  isolation: isolate;
   inset: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
   background-color: #f5ead4;
-  background-position: center top;
-  background-size: 100% 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/*
+ * 全屏背景与设计内容分层：
+ * .page 负责铺满任何比例的屏幕；
+ * .design-stage 始终保持 1638 × 3550 的设计坐标比例。
+ */
+.design-stage {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: min(
+    100%,
+    calc(100dvh * 1638 / 3550)
+  );
+  height: auto;
+  aspect-ratio: 1638 / 3550;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
 }
 
 .asset-button img {
@@ -760,22 +795,23 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: transparent;
+  background-color: transparent;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
 }
 
 .detail-background {
   position: absolute;
   z-index: 0;
   inset: 0;
-  background-position: center top;
-  background-size: 100% 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .detail-page-entering {
   pointer-events: none;
-}
-
-.detail-page-entering .detail-background {
   animation:
     detail-background-in
     560ms
@@ -783,9 +819,9 @@ img {
     both;
 }
 
-.detail-page-entering > .back-button,
-.detail-page-entering > .wide-action,
-.detail-page-entering > .detail-swipe-tip {
+.detail-page-entering .design-stage > .back-button,
+.detail-page-entering .design-stage > .wide-action,
+.detail-page-entering .design-stage > .detail-swipe-tip {
   opacity: 0;
   animation:
     detail-content-in
@@ -1375,7 +1411,7 @@ img {
 
 /* 神明详情页“选择 TA”按钮 */
 
-.detail-page > .wide-action {
+.detail-page .design-stage > .wide-action {
   position: absolute;
   z-index: 12;
   left: 50%;
@@ -1400,7 +1436,7 @@ img {
   -webkit-backface-visibility: hidden;
 }
 
-.detail-page > .wide-action img {
+.detail-page .design-stage > .wide-action img {
   display: block;
   width: 100%;
   height: auto;
@@ -1410,7 +1446,7 @@ img {
   opacity: 1;
 }
 
-.detail-page > .wide-action:active {
+.detail-page .design-stage > .wide-action:active {
   transform:
     translate3d(-50%, 0, 0)
     scale(0.97);
@@ -1787,7 +1823,10 @@ img {
 /* 茭杯等待页 */
 
 .cup-loading-page {
-  background: #fffef8;
+  background-color: #fffef8;
+  background-position: center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   isolation: isolate;
   pointer-events: none;
 }
@@ -1799,7 +1838,7 @@ img {
   width: 100%;
   height: 100%;
   max-width: none;
-  object-fit: fill;
+  object-fit: cover;
 
   animation:
     cup-glow-breathe
@@ -2518,9 +2557,3 @@ img {
   }
 }
 
-@media (min-width: 431px) {
-  .app-shell {
-    width: 393px;
-    height: min(100dvh, 852px);
-  }
-}

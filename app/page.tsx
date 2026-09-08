@@ -121,6 +121,18 @@ function MissingAsset({
   );
 }
 
+function DesignStage({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="design-stage">
+      {children}
+    </div>
+  );
+}
+
 export default function Home() {
   const [step, setStep] = useState<Step>("home");
   const [composedSaveImage, setComposedSaveImage] =
@@ -666,6 +678,7 @@ const carouselCards = cardOrder.length
             backgroundImage: `url(${assets.home.background})`,
           }}
         >
+          <DesignStage>
           <div
             className="home-deities"
             aria-hidden="true"
@@ -772,6 +785,7 @@ const carouselCards = cardOrder.length
                 `${assets.home.timing.buttonDelay}ms`,
             }}
           />
+          </DesignStage>
         </section>
       )}
 
@@ -801,6 +815,7 @@ const carouselCards = cardOrder.length
             backgroundImage: `url(${assets.home.background})`,
           }}
         >
+          <DesignStage>
           <div
             className="decor-layer"
             aria-hidden="true"
@@ -886,6 +901,7 @@ const carouselCards = cardOrder.length
               setStep("home");
             }}
           />
+          </DesignStage>
         </section>
       )}
 
@@ -931,6 +947,7 @@ const carouselCards = cardOrder.length
               backgroundImage: `url(${groupAssets.background})`,
             }}
           >
+            <DesignStage>
             <BackButton
               src={groupAssets.back}
               onClick={() => {
@@ -988,6 +1005,7 @@ const carouselCards = cardOrder.length
                 },
               )}
             </div>
+            </DesignStage>
           </section>
         )}
 
@@ -1008,14 +1026,11 @@ const carouselCards = cardOrder.length
     ? " detail-page-to-question"
     : ""
 }`}
+            style={{
+              backgroundImage: `url(${assets.detail.background})`,
+            }}
           >
-            <div
-              className="detail-background"
-              style={{
-                backgroundImage: `url(${assets.detail.background})`,
-              }}
-            />
-
+            <DesignStage>
             <BackButton
   src={assets.detail.back}
   onClick={() => {
@@ -1134,6 +1149,7 @@ const carouselCards = cardOrder.length
                 }}
               />
             )}
+            </DesignStage>
           </section>
         )}
 
@@ -1155,6 +1171,7 @@ const carouselCards = cardOrder.length
               backgroundImage: `url(${assets.question.background})`,
             }}
           >
+            <DesignStage>
             <BackButton
               src={assets.navigation.back}
               onClick={() => {
@@ -1204,6 +1221,7 @@ const carouselCards = cardOrder.length
   }}
   className="wide-action question-confirm"
 />
+            </DesignStage>
           </section>
         )}
 
@@ -1235,6 +1253,7 @@ const carouselCards = cardOrder.length
         backgroundImage: `url(${assets.oracle.background})`,
       }}
     >
+      <DesignStage>
       {oracleRevealPhase === "ready" && (
         <BackButton
           src={assets.oracle.back}
@@ -1287,17 +1306,18 @@ const carouselCards = cardOrder.length
           />
         </div>
       )}
+      </DesignStage>
     </section>
   )}
 
       {step === "cup-loading" && (
-        <section className="page cup-loading-page">
-          <img
-            className="cup-glow"
-            src={assets.cupLoading.glow}
-            alt=""
-          />
-
+        <section
+          className="page cup-loading-page"
+          style={{
+            backgroundImage: `url(${assets.cupLoading.glow})`,
+          }}
+        >
+          <DesignStage>
           <img
   className="cup-title"
   src={assets.cupLoading.title}
@@ -1329,6 +1349,7 @@ const carouselCards = cardOrder.length
     alt=""
   />
 </div>
+          </DesignStage>
         </section>
       )}
 
@@ -1344,6 +1365,7 @@ const carouselCards = cardOrder.length
     backgroundImage: `url(${assets.cupResult.background})`,
   }}
 >
+            <DesignStage>
             <BackButton
               src={assets.cupResult.back}
               onClick={() => {
@@ -1393,6 +1415,7 @@ const carouselCards = cardOrder.length
                 }}
               />
             </div>
+            </DesignStage>
                     </section>
         )}
 
@@ -1416,6 +1439,7 @@ const carouselCards = cardOrder.length
         backgroundImage: `url(${assets.save.background})`,
       }}
     >
+      <DesignStage>
       <BackButton
         src={assets.save.back}
         onClick={() => {
@@ -1450,6 +1474,7 @@ const carouselCards = cardOrder.length
         src={assets.save.tip}
         alt="长按保存图片"
       />
+      </DesignStage>
     </section>
   )}
     </main>
