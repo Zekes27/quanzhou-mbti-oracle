@@ -784,7 +784,8 @@ img {
 }
 
 .detail-page-entering > .back-button,
-.detail-page-entering > .wide-action {
+.detail-page-entering > .wide-action,
+.detail-page-entering > .detail-swipe-tip {
   opacity: 0;
   animation:
     detail-content-in
@@ -1413,6 +1414,29 @@ img {
   transform:
     translate3d(-50%, 0, 0)
     scale(0.97);
+}
+
+/* “选择 TA”按钮下方的滑动提示 */
+
+.detail-swipe-tip {
+  position: absolute;
+  z-index: 12;
+  bottom: 7.2%;
+  left: 50%;
+  width: 100%;
+  margin: 0;
+  transform: translateX(-50%);
+  color: #fc543a;
+  opacity: 0.6;
+  font-family:
+    "FontquanXinyiJixiangsong",
+    "Microsoft YaHei",
+    sans-serif;
+  font-size: clamp(9.1px, 2.45vw, 11.2px);
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
 }
 
 /* 神明选择页进入填写问题页 */
@@ -2374,6 +2398,25 @@ img {
 
   will-change: transform;
   backface-visibility: hidden;
+}
+
+.save-download-image {
+  position: absolute;
+  z-index: 10;
+  top: 1%;
+  left: 7.5%;
+  width: 85%;
+  height: 84%;
+  object-fit: contain;
+
+  /*
+   * 用户看到的仍是原来的动画卡片，
+   * 长按时实际保存的是合成后的完整图片。
+   */
+  opacity: 0.001;
+  -webkit-touch-callout: default;
+  user-select: auto;
+  touch-action: manipulation;
 }
 
 /*
