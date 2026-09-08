@@ -46,17 +46,24 @@ export const groups: Record<
   ],
 };
 
-export const completeMbti =
-  new Set<MbtiType>([
-    "INTJ",
-    "INTP",
-    "INFJ",
-    "INFP",
-    "ENTJ",
-    "ENTP",
-    "ENFJ",
-    "ESFJ",
-  ]);
+export const completeMbti = new Set<MbtiType>([
+  "INTJ",
+  "INTP",
+  "INFJ",
+  "INFP",
+  "ISTJ",
+  "ISFJ",
+  "ISTP",
+  "ISFP",
+  "ENTJ",
+  "ENTP",
+  "ENFJ",
+  "ENFP",
+  "ESTJ",
+  "ESFJ",
+  "ESTP",
+  "ESFP",
+]);
 
 export const deityCards: Record<
   DeityGroup,
