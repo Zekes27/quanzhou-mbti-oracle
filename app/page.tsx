@@ -123,6 +123,8 @@ function MissingAsset({
 
 export default function Home() {
   const [step, setStep] = useState<Step>("home");
+  const [composedSaveImage, setComposedSaveImage] =
+  useState<string | null>(null);
   const [homeReady, setHomeReady] = useState(false);
   const [isHomeExiting, setIsHomeExiting] = useState(false);
 
@@ -359,6 +361,133 @@ useEffect(() => {
     window.clearTimeout(timer);
   };
 }, [isSaveTransitioning]);
+
+useEffect(() => {
+  if (
+    step !== "save" ||
+    !mbti ||
+    !variant
+  ) {
+    setComposedSaveImage(null);
+    return;
+  }
+
+  let cancelled = false;
+
+  const backgroundSrc = assets.save.background;
+  const cardSrc = assets.save.card(
+    mbti,
+    variant,
+  );
+
+  function loadImage(src: string) {
+    return new Promise<HTMLImageElement>(
+      (resolve, reject) => {
+        const image = new Image();
+
+        image.onload = () => resolve(image);
+        image.onerror = reject;
+        image.src = src;
+      },
+    );
+  }
+
+  async function composeSaveImage() {
+    try {
+      const [background, card] =
+        await Promise.all([
+          loadImage(backgroundSrc),
+          loadImage(cardSrc),
+        ]);
+
+      if (cancelled) return;
+
+      const canvas =
+        document.createElement("canvas");
+
+      canvas.width = background.naturalWidth;
+      canvas.height = background.naturalHeight;
+
+      const context = canvas.getContext("2d");
+
+      if (!context) return;
+
+      /* 绘制完整蓝色渐变背景 */
+      context.drawImage(
+        background,
+        0,
+        0,
+        canvas.width,
+        canvas.height,
+      );
+
+      /*
+       * 对应页面中的：
+       * top: 1%;
+       * width: 85%;
+       * height: 84%;
+       * object-fit: contain;
+       */
+      const boxWidth = canvas.width * 0.85;
+      const boxHeight = canvas.height * 0.84;
+      const boxX =
+        (canvas.width - boxWidth) / 2;
+      const boxY = canvas.height * 0.01;
+
+      const cardRatio =
+        card.naturalWidth /
+        card.naturalHeight;
+
+      const boxRatio =
+        boxWidth / boxHeight;
+
+      let drawWidth: number;
+      let drawHeight: number;
+
+      if (cardRatio > boxRatio) {
+        drawWidth = boxWidth;
+        drawHeight =
+          drawWidth / cardRatio;
+      } else {
+        drawHeight = boxHeight;
+        drawWidth =
+          drawHeight * cardRatio;
+      }
+
+      const drawX =
+        boxX +
+        (boxWidth - drawWidth) / 2;
+
+      const drawY =
+        boxY +
+        (boxHeight - drawHeight) / 2;
+
+      /* 绘制粉色签文卡片 */
+      context.drawImage(
+        card,
+        drawX,
+        drawY,
+        drawWidth,
+        drawHeight,
+      );
+
+      setComposedSaveImage(
+        canvas.toDataURL("image/png"),
+      );
+    } catch (error) {
+      console.error(
+        "生成保存图片失败：",
+        error,
+      );
+    }
+  }
+
+  void composeSaveImage();
+
+  return () => {
+    cancelled = true;
+  };
+}, [step, mbti, variant]);
 
   function beginGroup(nextGroup: DeityGroup) {
     setGroup(nextGroup);
@@ -993,6 +1122,9 @@ const carouselCards = cardOrder.length
   }}
   className="wide-action"
 />
+<p className="detail-swipe-tip">
+  左右滑动切换签纸
+</p>
               </>
             ) : (
               <MissingAsset
@@ -1303,6 +1435,15 @@ const carouselCards = cardOrder.length
         )}
         alt={`${mbti} 最终保存卡 ${variant}`}
       />
+
+{composedSaveImage && (
+  <img
+    className="save-download-image"
+    src={composedSaveImage}
+    alt={`${mbti} 完整签文图片`}
+    draggable
+  />
+)}
 
       <img
         className="save-tip save-tip-delayed"
