@@ -801,6 +801,14 @@ img {
   background-repeat: no-repeat !important;
 }
 
+/*
+ * 神明卡片滑动时可以使用设计画布两侧的全屏背景空间，
+ * 最终仍由 .detail-page 在真实屏幕边缘裁切。
+ */
+.detail-page .design-stage {
+  overflow: visible;
+}
+
 .detail-background {
   position: absolute;
   z-index: 0;
@@ -1630,6 +1638,50 @@ img {
     scale(0.97);
 }
 
+/* 手机键盘弹出后的专用输入模式 */
+
+.question-page-keyboard .design-stage {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: auto;
+  overflow: visible;
+}
+
+.question-page-keyboard .question-stage {
+  top: 0;
+  left: 50%;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  object-fit: contain;
+  opacity: 0.28;
+  transform: translateX(-50%);
+  transition: opacity 160ms ease-out;
+}
+
+.question-page-keyboard .question-input {
+  z-index: 40;
+  top: auto;
+  bottom: 0;
+  left: 2.5%;
+  width: 95%;
+  height: 78%;
+}
+
+.question-page-keyboard .question-input textarea {
+  top: 11%;
+  left: 12.5%;
+  width: 75%;
+  height: 78%;
+  font-size: clamp(18px, 4.95vw, 22px);
+}
+
+.question-page-keyboard .back-button,
+.question-page-keyboard .question-confirm {
+  opacity: 0;
+  pointer-events: none;
+}
+
 /* 填写问题页进入签文页 */
 
 .question-page-to-oracle {
@@ -2420,6 +2472,14 @@ img {
 /* 最终保存页 */
 
 /* 最终保存页 */
+
+/*
+ * 保存卡片下落和轻微摆动时允许越过设计画布边缘，
+ * 最终仍由全屏 .save-page 在真实屏幕边缘裁切。
+ */
+.save-page .design-stage {
+  overflow: visible;
+}
 
 .save-card {
   position: absolute;

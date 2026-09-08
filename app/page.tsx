@@ -165,6 +165,9 @@ const [
 
   const [question, setQuestion] = useState("");
 
+  const [isQuestionFocused, setIsQuestionFocused] =
+    useState(false);
+
   const [variant, setVariant] =
     useState<OracleVariant | null>(null);
 
@@ -1166,6 +1169,10 @@ const carouselCards = cardOrder.length
   "page-transition"
     ? " question-page-to-oracle"
     : ""
+}${
+  isQuestionFocused
+    ? " question-page-keyboard"
+    : ""
 }`}
             style={{
               backgroundImage: `url(${assets.question.background})`,
@@ -1197,6 +1204,12 @@ const carouselCards = cardOrder.length
 
               <textarea
                 value={question}
+                onFocus={() => {
+                  setIsQuestionFocused(true);
+                }}
+                onBlur={() => {
+                  setIsQuestionFocused(false);
+                }}
                 onChange={(event) => {
                   setQuestion(
                     event.target.value,
