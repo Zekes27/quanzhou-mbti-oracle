@@ -1,0 +1,273 @@
+.demoPage {
+  position: relative;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      160deg,
+      #0d477b 0%,
+      #126b7a 52%,
+      #294f46 100%
+    );
+
+  isolation: isolate;
+}
+
+/* 背景柔光 */
+
+.backgroundGlow {
+  position: absolute;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      rgba(67, 165, 220, 0.48),
+      transparent 38%
+    ),
+    radial-gradient(
+      circle at 48% 84%,
+      rgba(62, 148, 113, 0.38),
+      transparent 42%
+    );
+
+  filter: blur(30px);
+}
+
+.demoContent {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 28px 24px 22px;
+}
+
+/*
+ * 根据浏览器高度自动缩放。
+ * 设计屏幕比例对应项目使用的393 × 852。
+ */
+
+.phone {
+  position: relative;
+
+  width: min(
+    390px,
+    calc((100svh - 145px) * 393 / 852)
+  );
+
+  aspect-ratio: 393 / 852;
+
+  filter:
+    drop-shadow(
+      0 28px 42px
+      rgba(0, 0, 0, 0.42)
+    )
+    drop-shadow(
+      0 6px 12px
+      rgba(0, 0, 0, 0.28)
+    );
+}
+
+/* 黑色手机外壳 */
+
+.phoneBezel {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  padding: 10px;
+
+  border: 2px solid #44474a;
+  border-radius: 54px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #292b2e 0%,
+      #050505 32%,
+      #191a1c 72%,
+      #47494b 100%
+    );
+
+  box-shadow:
+    inset 0 0 0 2px #090909,
+    inset 0 0 0 4px #242629,
+    inset 0 1px 2px
+      rgba(255, 255, 255, 0.22);
+}
+
+/* 手机屏幕 */
+
+.phoneScreen {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+  border-radius: 44px;
+  background: #f5ead4;
+}
+
+/* 可以真实操作的网站 */
+
+.appFrame {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+  background: #f5ead4;
+}
+
+
+
+/* 底部手势条 */
+
+.homeIndicator {
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  z-index: 20;
+
+  width: 34%;
+  height: 5px;
+
+  border-radius: 999px;
+  background: rgba(20, 20, 20, 0.86);
+
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+/* 手机侧边按键 */
+
+.sideButton {
+  position: absolute;
+  z-index: 1;
+
+  width: 5px;
+  border-radius: 4px;
+  background:
+    linear-gradient(
+      90deg,
+      #121416,
+      #3d4145
+    );
+}
+
+.muteButton {
+  top: 17%;
+  left: -3px;
+  height: 6%;
+}
+
+.volumeUpButton {
+  top: 26%;
+  left: -4px;
+  height: 9%;
+}
+
+.volumeDownButton {
+  top: 38%;
+  left: -4px;
+  height: 9%;
+}
+
+.powerButton {
+  top: 29%;
+  right: -4px;
+  height: 15%;
+}
+
+/* 操作提示 */
+
+.hint {
+  margin: 17px 0 0;
+
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-align: center;
+
+  text-shadow:
+    0 2px 8px
+    rgba(0, 0, 0, 0.28);
+}
+
+.directLink {
+  margin-top: 11px;
+  padding: 8px 18px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.38);
+  border-radius: 999px;
+
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+
+  backdrop-filter: blur(12px);
+  transition:
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.directLink:hover {
+  background:
+    rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.directLink:active {
+  transform: translateY(1px);
+}
+
+/* 较小屏幕 */
+
+@media (max-width: 600px) {
+  .demoContent {
+    padding:
+      max(18px, env(safe-area-inset-top))
+      14px
+      max(14px, env(safe-area-inset-bottom));
+  }
+
+  .phone {
+    width: min(
+      88vw,
+      calc((100svh - 125px) * 393 / 852)
+    );
+  }
+
+  .phoneBezel {
+    padding: 8px;
+    border-radius: 46px;
+  }
+
+  .phoneScreen {
+    border-radius: 38px;
+  }
+
+
+
+  .hint {
+    margin-top: 13px;
+    font-size: 12px;
+  }
+}
