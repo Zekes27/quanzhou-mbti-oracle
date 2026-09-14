@@ -180,6 +180,11 @@ const [
     useState<CupResultKey | null>(null);
 
 const [
+  isCupExplanationOpen,
+  setIsCupExplanationOpen,
+] = useState(false);
+
+const [
   isCupResultTransitioning,
   setIsCupResultTransitioning,
 ] = useState(false);
@@ -1409,6 +1414,18 @@ const carouselCards = cardOrder.length
           : "笑杯"
     }
   />
+
+  <button
+    type="button"
+    className="cup-explanation-button"
+    aria-label="查看茭杯结果解释"
+    aria-expanded={isCupExplanationOpen}
+    onClick={() => {
+      setIsCupExplanationOpen(true);
+    }}
+  >
+    ?
+  </button>
 </div>
 
             <div className="dual-actions result-actions">
@@ -1427,9 +1444,41 @@ const carouselCards = cardOrder.length
                   draw(true);
                 }}
               />
-            </div>
+                        </div>
             </DesignStage>
-                    </section>
+
+            {isCupExplanationOpen && (
+              <div
+                className="cup-explanation-overlay"
+                role="dialog"
+                aria-modal="true"
+                aria-label="茭杯结果解释"
+                onClick={() => {
+                  setIsCupExplanationOpen(false);
+                }}
+              >
+                <div
+                  className="cup-explanation-card"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                  }}
+                >
+                  <img
+                    src={assets.cupResult.explanation(
+                      cupResult,
+                    )}
+                    alt={
+                      cupResult === "yang"
+                        ? "阳杯解释"
+                        : cupResult === "yin"
+                          ? "阴杯解释"
+                          : "笑杯解释"
+                    }
+                  />
+                </div>
+              </div>
+            )}
+          </section>
         )}
 
       {/* 左滑过渡期间，只显示保存页背景 */}

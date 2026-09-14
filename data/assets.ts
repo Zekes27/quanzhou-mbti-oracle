@@ -708,7 +708,18 @@ export const assets = {
       asset(
         `09_cup_result_assets/result_graphics/09-cup-result-${result}.png`,
       ),
-  },
+      
+  explanation: (
+    result: CupResultKey,
+  ) =>
+    asset(
+      `09_cup_result_assets/explanations/09-jiaobei-explanation-${
+        result === "smile"
+          ? "xiao"
+          : result
+      }.png`,
+    ),
+},
 
   save: {
     background: asset(

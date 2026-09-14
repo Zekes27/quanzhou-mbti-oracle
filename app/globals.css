@@ -2419,6 +2419,164 @@ img {
   bottom: 5.8%;
 }
 
+/* 茭杯结果讲解按钮 */
+
+.cup-explanation-button {
+  position: absolute;
+
+  /* 完全按照参考图在结果面板中的相对位置 */
+  top: 41%;
+  right: 21.5%;
+  z-index: 5;
+
+  /* 以茭杯结果面板为基准缩放 */
+  width: 7.6%;
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  /* 参考图中的深绿色细圆框 */
+  border: clamp(1.5px, 0.42vw, 2.5px)
+    solid #00633f;
+  border-radius: 50%;
+  background-color: #ffffff;
+
+  /* 参考图中的黑色衬线问号 */
+  color: #000000;
+  font-family:
+    "Times New Roman",
+    "Songti SC",
+    serif;
+  font-size: clamp(14px, 4.3vw, 23px);
+  font-weight: 400;
+  line-height: 0.82;
+
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+
+  box-shadow: none;
+
+  transition:
+    transform 140ms ease,
+    background-color 140ms ease;
+}
+
+/*
+ * 保持画面里的圆圈较小，
+ * 同时扩大手机上的实际点击范围。
+ */
+.cup-explanation-button::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+}
+
+.cup-explanation-button:active {
+  transform: scale(0.9);
+  background-color: #f6fff9;
+}
+
+/* 解释卡片弹层 */
+
+.cup-explanation-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    max(20px, env(safe-area-inset-top))
+    6%
+    max(20px, env(safe-area-inset-bottom));
+
+  background:
+    rgba(255, 238, 242, 0.18);
+
+  -webkit-backdrop-filter:
+    blur(8px)
+    brightness(0.82);
+
+  backdrop-filter:
+    blur(8px)
+    brightness(0.82);
+
+  cursor: pointer;
+  animation:
+    cup-explanation-overlay-in
+    220ms
+    ease-out
+    both;
+}
+
+.cup-explanation-card {
+  width: min(88%, 620px);
+  max-height: 78%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: default;
+
+  animation:
+    cup-explanation-card-in
+    260ms
+    cubic-bezier(0.22, 0.75, 0.25, 1)
+    both;
+}
+
+.cup-explanation-card img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+  max-height: 78vh;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 12px 22px
+      rgba(20, 54, 45, 0.22)
+    );
+}
+
+@keyframes cup-explanation-overlay-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes cup-explanation-card-in {
+  from {
+    opacity: 0;
+    transform:
+      translate3d(0, 16px, 0)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translate3d(0, 0, 0)
+      scale(1);
+  }
+}
+
 /* 签文页／茭杯结果页向左退出 */
 
 .save-transition-source {
